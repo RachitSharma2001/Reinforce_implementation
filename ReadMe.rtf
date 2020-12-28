@@ -1,0 +1,11 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 In this project, I implemented the Reinforcement learning algorithm called REINFORCE. This algorithm is under the general class of policy gradient methods for reinforcement learning, meaning it focuses on the policy and changes as it goes and learns more about the environment. \
+\
+In this specific algorithm, the agent goes through many episodes. In each episode, it first does a monte carlo rollout, meaning it acts in the environment according to its parameters(the weights of the neural network, which output the probability of doing the two possible actions an agent can do in an environment), until it either \'93dies\'94(in cart pole this means either going off position or off angle) or it \'93survives\'94 for 200 time steps. For each time step the state, action, and rewards were recorded. After the rollout, the algorithm looks at each recorded state, action, and reward, and it calculates, based on the reward the action got, how to either increase the probability of that action being chosen by the neural network(that represents its policy, or more specifically, its weights represent its policy) or decrease it. We repeatedly do this until the agent consistently gets a score 200 for 100 episodes(which is considered a solve in the cart pole environment). \
+\
+I used pytorch to implement the policy neural network. The biggest challenge I faced was that I made a dumb mistake: I at first only allowed the agent to pick the action associated with the highest probability. This obviously meant the agent did not explore much of its environment! After fixing this, the agent was able to solve at about 2500 episodes, so this is certainly not the best implementation, but its a great and fun start!}
