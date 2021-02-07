@@ -1,4 +1,4 @@
-# Reinforce_implementation
+
 In this project, I implemented the Reinforcement learning algorithm called REINFORCE. This algorithm is under the general class of policy gradient methods for reinforcement learning, meaning it focuses on the policy and changes as it goes and learns more about the environment.   
 
 In this specific algorithm, the agent goes through many episodes. In each episode, it first does a monte carlo rollout, meaning it acts in the environment according to its parameters(the weights of the neural network, which output the probability of doing the two possible actions an agent can do in an environment), until it either “dies”(in cart pole this means either going off position or off angle) or it “survives” for 200 time steps. For each time step the state, action, and rewards were recorded. 
